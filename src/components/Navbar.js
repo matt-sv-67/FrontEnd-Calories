@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div className='app_navbar'>
             <h1>My <span>Calorie</span> Calculator</h1>
-            <img src={'/images/newicon.png'}
+            <img src={'../images/newicon.png'}
                  alt='icon'
                  style={{width: '10%', height: 'auto'}}
             />
