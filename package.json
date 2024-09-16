@@ -1,6 +1,7 @@
 {
   "name": "frontdev",
   "version": "0.1.0",
+  "homepage": "https://matt-sv-67.github.io/FrontEnd-Calories/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -19,6 +20,8 @@
   },
   "scripts": {
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
