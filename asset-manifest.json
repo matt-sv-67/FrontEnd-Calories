@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FrontEnd-Calories/static/css/main.9dafc097.css",
-    "main.js": "/FrontEnd-Calories/static/js/main.7a51b6f9.js",
+    "main.js": "/FrontEnd-Calories/static/js/main.fb2c92db.js",
     "static/js/453.fc8a9f67.chunk.js": "/FrontEnd-Calories/static/js/453.fc8a9f67.chunk.js",
     "index.html": "/FrontEnd-Calories/index.html",
     "main.9dafc097.css.map": "/FrontEnd-Calories/static/css/main.9dafc097.css.map",
-    "main.7a51b6f9.js.map": "/FrontEnd-Calories/static/js/main.7a51b6f9.js.map",
+    "main.fb2c92db.js.map": "/FrontEnd-Calories/static/js/main.fb2c92db.js.map",
     "453.fc8a9f67.chunk.js.map": "/FrontEnd-Calories/static/js/453.fc8a9f67.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9dafc097.css",
-    "static/js/main.7a51b6f9.js"
+    "static/js/main.fb2c92db.js"
   ]
 }
