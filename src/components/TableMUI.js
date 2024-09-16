@@ -1,5 +1,5 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-// src/components/MUI_EnhancedTable.js
+// src/components/TableMUI.js
 // The table that displaying the meals' description, type and calories for today and for old report
 import React from 'react';
 // Material-UI imports and styling:

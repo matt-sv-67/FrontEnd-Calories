@@ -1,7 +1,7 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-// src/components/DataService.js
+// src/components/DataFetch.js
 import idb from '../idb';
-import ErrorHandling from './ErrorClass';
+import ErrorHandling from './Errors';
 
 // Fetching the meals based on the date
 const fetchAttributesForDate = async (selectedDate, setSelectedAttributes, selectedView) => {

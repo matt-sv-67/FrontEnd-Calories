@@ -1,5 +1,5 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-// src/components/ControlsInput.js
+// src/components/MealsInput.js
 // Controls for adding new meals
 import React from 'react';
 //Material-UI imports and styling:
@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import { FormControl, InputLabel, Select, MenuItem, Input } from '@mui/material';
 import '../App.css';
 
-const ControlsInput = ({
+const MealsInput = ({
                            calories,
                            mealDescripton,
                            mealType,
@@ -66,4 +66,4 @@ const ControlsInput = ({
     );
 };
 
-export default ControlsInput;
+export default MealsInput;

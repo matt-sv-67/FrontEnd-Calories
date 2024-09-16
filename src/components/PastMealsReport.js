@@ -1,12 +1,12 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-// src/components/OldMealsReport.js
+// src/components/PastMealsReport.js
 // show the report from the day selected
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../App.css';
-import EnhancedTable from './MUI_EnhancedTable';
+import EnhancedTable from './TableMUI';
 
-const OldMealsReport = ({ selectedAttributes, deleteMeal }) => {
+const PastMealsReport = ({ selectedAttributes, deleteMeal }) => {
     // Show only if there is a report
     const [isReportVisible, setReportVisibility] = useState(true);
 
@@ -61,4 +61,4 @@ const OldMealsReport = ({ selectedAttributes, deleteMeal }) => {
     return null;
 };
 
-export default OldMealsReport;
+export default PastMealsReport;

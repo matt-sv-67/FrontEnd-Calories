@@ -1,5 +1,5 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-//src/components/ErrorClass.js
+//src/components/Errors.js
 //Class for errors when an error is thrown
 class ErrorHandling extends Error {
     constructor(action) {

@@ -1,10 +1,10 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-// src/components/CalendarShow.js
+// src/components/CalendarComp.js
 // calendar to get a report of specific date
 import React, { useState } from 'react';
 import '../App.css';
-import fetchAttributesForDate from './DataService';
-import ErrorHandling from './ErrorClass';
+import fetchAttributesForDate from './DataFetch';
+import ErrorHandling from './Errors';
 //Import from MUI
 import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
@@ -61,7 +61,7 @@ const ByYearCalendar = ({ selectedDate, setSelectedDate }) => {
 };
 
 
-const CalendarShow = ({ setShowMealsReport, setSelectedAttributes }) => {
+const CalendarComp = ({ setShowMealsReport, setSelectedAttributes }) => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     // Set selectedaView as the chosen calendar
     const [selectedView, setSelectedView] = useState('');
@@ -133,4 +133,4 @@ const CalendarShow = ({ setShowMealsReport, setSelectedAttributes }) => {
     );
 };
 
-export default CalendarShow;
+export default CalendarComp;

@@ -7,14 +7,14 @@ import idb from './idb';
 import 'react-calendar/dist/Calendar.css';
 import Button from '@mui/material/Button';
 
-import CalendarShow from './components/CalendarShow';
-import OldMealsReport from './components/OldMealsReport';
+import CalendarShow from './components/CalendarComp';
+import PastMealsReport from './components/PastMealsReport';
 import Navbar from './components/Navbar';
-import ShowMealsOfToday from './components/ShowMealsOfToday';
-import fetchAttributesForDate from './components/DataService';
-import ErrorHandling from './components/ErrorClass';
-import ControlsCounter from './components/ControlsCounter';
-import ControlsInput from './components/ControlsInput';
+import TodaysMeals from './components/TodaysMeals';
+import fetchAttributesForDate from './components/DataFetch';
+import ErrorHandling from './components/Errors';
+import CaloriesToday from './components/CaloriesToday';
+import MealsInput from './components/MealsInput';
 import './App.css';
 
 const App = () => {
@@ -122,10 +122,10 @@ const App = () => {
           <tbody>
           <tr>
             <td className='app_table_cell'>
-              <ControlsCounter totalCalories={totalCalories} />
+              <CaloriesToday totalCalories={totalCalories} />
             </td>
             <td className='app_table_cell'>
-              <ControlsInput
+              <MealsInput
                   calories={calories}
                   mealDescripton={mealDescripton}
                   mealType={mealType}
@@ -150,9 +150,9 @@ const App = () => {
           </tr>
           </tbody>
         </table>
-        <ShowMealsOfToday meals={meals} deleteMeal={deleteMeal} />
+        <TodaysMeals meals={meals} deleteMeal={deleteMeal} />
         {showMealsReport ? (
-            <OldMealsReport
+            <PastMealsReport
                 selectedAttributes={selectedAttributes}
                 deleteMeal={deleteMeal}
             />

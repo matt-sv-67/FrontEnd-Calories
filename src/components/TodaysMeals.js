@@ -1,12 +1,12 @@
 //Matanel Shachamorov (206945446), Michal Berlin (206387391)
-// components/ShowMealsOfToday.js
+// components/TodaysMeals.js
 //show a list of meals added today
 
 import React from 'react';
 import '../App.css';
-import EnhancedTable from './MUI_EnhancedTable';
+import EnhancedTable from './TableMUI';
 
-const ShowMealsOfToday = ({ meals, deleteMeal }) => {
+const TodaysMeals = ({ meals, deleteMeal }) => {
     return (
         <div>
             <div className='app_meals_container_wrapper'>
@@ -18,4 +18,4 @@ const ShowMealsOfToday = ({ meals, deleteMeal }) => {
     );
 };
 
-export default ShowMealsOfToday;
+export default TodaysMeals;
