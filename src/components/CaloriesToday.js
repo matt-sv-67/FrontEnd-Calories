@@ -7,7 +7,8 @@ import '../App.css';
 const CaloriesToday = ({ totalCalories }) => {
     return (
         <div className='app_controls_counter'>
-            <h2>Total calories for today: <span>{totalCalories}</span></h2>{/*show total calories of today*/}
+            {/*show total calories of today*/}
+            <h2>Total calories for today: <span>{totalCalories}</span></h2>
             {/*show image to design the page*/}
             <img src={`${process.env.PUBLIC_URL}/images/food_image.png`}
                  alt='food_image'

@@ -39,7 +39,7 @@ function getComparator(order, orderBy) {
         : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-// unction to stabilize sorting order
+// Function to stabilize sorting order
 function stableSort(array, comparator) {
     const stabilizedThis = array.map((el, index) => [el, index]);
     stabilizedThis.sort((a, b) => {
@@ -296,7 +296,8 @@ function EnhancedTable(props) {
                                 return (
                                     <TableRow
                                         hover
-                                        onClick={(event) => handleClick(event, row.id)}
+                                        onClick={(event) =>
+                                            handleClick(event, row.id)}
                                         role='checkbox'
                                         aria-checked={isItemSelected}
                                         tabIndex={-1}

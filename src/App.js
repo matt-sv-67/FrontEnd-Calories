@@ -6,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 import idb from './idb';
 import 'react-calendar/dist/Calendar.css';
 import Button from '@mui/material/Button';
-
 import CalendarShow from './components/CalendarComp';
 import PastMealsReport from './components/PastMealsReport';
 import Navbar from './components/Navbar';
@@ -18,6 +17,7 @@ import MealsInput from './components/MealsInput';
 import './App.css';
 
 const App = () => {
+  // Creating all the variables
   const [meals, setMeals] = useState([]);
   const [calories, setMealCalories] = useState(0);
   const [mealType, setMealType] = useState(null);
@@ -26,8 +26,10 @@ const App = () => {
   const [showMealsReport, setShowMealsReport] = useState(false);
   const [selectedAttributes, setSelectedAttributes] = useState(null);
 
+  // Asynchronous meals fetching
   const fetchMeals = async () => {
     try {
+      // Trying to fetch meals
       console.log("Fetching meals for today...");
       await idb.openCaloriesDB('caloriesdb', 1);
       const today = new Date();
@@ -35,6 +37,7 @@ const App = () => {
       const mealsToday = await fetchAttributesForDate(today, setSelectedAttributes, 'today');
       console.log("Meals fetched for today:", mealsToday);
 
+      // After fetch display meals and calculate calories
       if (mealsToday && mealsToday.length > 0) {
         const sumCalories = mealsToday.reduce((total, meal) =>
             total + (parseInt(meal.calorie, 10) || 0), 0);
@@ -45,6 +48,7 @@ const App = () => {
         setMeals([]);
         setTotalCalories(0);
       }
+    // Error handling
     } catch (error) {
       console.error("Error fetching meals for today:", error);
       throw new ErrorHandling('fetch');
@@ -55,6 +59,7 @@ const App = () => {
     fetchMeals();
   }, []);
 
+  // Handling add meals button and checking for requirements
   const onAddMealsClick = async () => {
     if (calories <= 0) {
       alert('Must fill a legal calories larger than zero, not negative or text');
@@ -68,6 +73,7 @@ const App = () => {
       alert('Must provide meal description');
       return;
     }
+    // After all is filled, try to add meal
     try {
       await idb.openCaloriesDB('caloriesdb', 1);
       const today = new Date();
@@ -82,15 +88,18 @@ const App = () => {
       });
       await fetchMeals();
       alert('Meal added successfully!');
+    // Error handling
     } catch (error) {
       console.error(error);
       throw ErrorHandling('addMeal');
     }
+    // After adding meal or error, re-setting the form
     setMealCalories(0);
     setMealDescripton('');
     setMealType('');
   };
 
+  // Delete meal function
   const deleteMeal = async (mealId) => {
     try {
       await idb.openCaloriesDB('caloriesdb', 1);
@@ -103,6 +112,7 @@ const App = () => {
     }
   };
 
+  // Calendar display
   const clickToShowCalendar = () => {
     const calendarContainer = document.getElementsByClassName('calendar-container')[0];
     if (calendarContainer) {
@@ -117,14 +127,17 @@ const App = () => {
 
   return (
       <div className='App_home'>
+        {/* Navbar from MUI with our data*/}
         <Navbar />
         <table className='app_table'>
           <tbody>
           <tr>
             <td className='app_table_cell'>
+              {/* Calories component usage*/}
               <CaloriesToday totalCalories={totalCalories} />
             </td>
             <td className='app_table_cell'>
+              {/* Meals component usage*/}
               <MealsInput
                   calories={calories}
                   mealDescripton={mealDescripton}
@@ -136,6 +149,7 @@ const App = () => {
               />
             </td>
             <td className='app_table_cell'>
+              {/* Calendar and reports button*/}
               <div className='app_constrols_report'>
                 <Button className='btn' onClick={clickToShowCalendar} variant='contained'
                         color='primary' sx={{ marginTop: '10px', marginBottom: '10px' }}>
@@ -150,6 +164,7 @@ const App = () => {
           </tr>
           </tbody>
         </table>
+        {/* Today's meals and past reports components usage*/}
         <TodaysMeals meals={meals} deleteMeal={deleteMeal} />
         {showMealsReport ? (
             <PastMealsReport

@@ -63,7 +63,7 @@ const ByYearCalendar = ({ selectedDate, setSelectedDate }) => {
 
 const CalendarComp = ({ setShowMealsReport, setSelectedAttributes }) => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    // Set selectedaView as the chosen calendar
+    // Set selectedView as the chosen calendar
     const [selectedView, setSelectedView] = useState('');
 
     const selectDate = async () => {
@@ -109,16 +109,19 @@ const CalendarComp = ({ setShowMealsReport, setSelectedAttributes }) => {
                 </RadioGroup>
             </FormControl>
             {/* Show the calendar by the user preference */}
+            {/*by day*/}
             <div className='cal-container'
                  style={{ display: selectedView === 'byDay' ? 'block' : 'none' }}>
                 <ByDayCalendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
             </div>
 
+            {/*by month*/}
             <div className='cal-container'
                  style={{ display: selectedView === 'byMonth' ? 'block' : 'none' }}>
                 <ByMonthCalendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
             </div>
 
+            {/*by year*/}
             <div className='cal-container'
                  style={{ display: selectedView === 'byYear' ? 'block' : 'none' }}>
                 <ByYearCalendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />

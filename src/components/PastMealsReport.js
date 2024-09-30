@@ -16,7 +16,7 @@ const PastMealsReport = ({ selectedAttributes, deleteMeal }) => {
         // Get the last date of the selected report
         const lastSelectedDate =
             new Date(selectedAttributes[selectedAttributes.length - 1].date);
-
+        // Setting the different parts of the date
         const firstDay = firstSelectedDate.getDate().toString().padStart(2, '0');
         const lastDay = lastSelectedDate.getDate().toString().padStart(2, '0');
 
